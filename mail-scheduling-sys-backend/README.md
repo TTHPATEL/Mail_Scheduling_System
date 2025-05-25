@@ -1,2 +1,2 @@
-# Backend-mail-schedule
+# Backend of Mail Scheduling System
  
