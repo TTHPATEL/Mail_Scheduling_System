@@ -13,9 +13,9 @@ export default function templateEdit() {
   useEffect(() => {
     // Fetch all required data
     Promise.all([
-      fetch(
-        `https://backend-mail-schedule-production.up.railway.app/api/template/${id}`
-      ).then((res) => res.json()),
+      fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/template/${id}`).then(
+        (res) => res.json()
+      ),
     ]).then(([template]) => {
       setTemplate(template);
       setDisplaytemplate(template);
@@ -31,7 +31,7 @@ export default function templateEdit() {
     };
 
     const res = await fetch(
-      `https://backend-mail-schedule-production.up.railway.app/api/template/${id}`,
+      `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/template/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

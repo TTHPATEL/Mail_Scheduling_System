@@ -2,20 +2,14 @@ import UserlistUI from "./UserlistUI";
 
 export default async function userList() {
   const Userlistdata = await (
-    await fetch(
-      "https://backend-mail-schedule-production.up.railway.app/api/userlist",
-      {
-        cache: "no-cache",
-      }
-    )
+    await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/userlist`, {
+      cache: "no-cache",
+    })
   ).json();
   const categorylist = await (
-    await fetch(
-      "https://backend-mail-schedule-production.up.railway.app/api/categorylist",
-      {
-        cache: "no-cache",
-      }
-    )
+    await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/categorylist`, {
+      cache: "no-cache",
+    })
   ).json();
 
   function Adduser() {}

@@ -7,14 +7,11 @@ export default function TemplatelistUI({ TemplatelistData }) {
   let router = useRouter();
 
   function Delete(IDofTemplate) {
-    fetch(
-      "https://backend-mail-schedule-production.up.railway.app/delete/template",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ template_id: IDofTemplate }),
-      }
-    )
+    fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/delete/template`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ template_id: IDofTemplate }),
+    })
       .then((data) => data.json())
       .then((data) => console.log(data));
     router.push("template-list");

@@ -11,19 +11,13 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      "https://backend-mail-schedule-production.up.railway.app/api/templates"
-    )
+    fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/templates`)
       .then((data) => data.json())
       .then((data) => setTemplist(data));
-    fetch(
-      "https://backend-mail-schedule-production.up.railway.app/api/categorylist"
-    )
+    fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/categorylist`)
       .then((data) => data.json())
       .then((data) => setCategorylist(data));
-    fetch(
-      "https://backend-mail-schedule-production.up.railway.app/api/userlist"
-    )
+    fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/userlist`)
       .then((data) => data.json())
       .then((data) => setUserlists(data))
       .finally(() => setLoading(false));
@@ -43,7 +37,7 @@ export default function Home() {
       .map((user) => user.email);
 
     const res = await fetch(
-      "https://backend-mail-schedule-production.up.railway.app/api/scheduleMail",
+      `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/scheduleMail`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
