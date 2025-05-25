@@ -4,6 +4,8 @@ import nodemailer from "nodemailer";
 import cron from "node-cron";
 import moment from "moment-timezone";
 const SERVER_TIMEZONE = "Asia/Kolkata"; // Change this to match your server's timezone
+import dotenv from "dotenv";
+dotenv.config({});
 
 const app = express();
 app.use(express.json());
@@ -432,7 +434,7 @@ app.post("/delete/template", (req, res) => {
 });
 
 //  Start Server
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
