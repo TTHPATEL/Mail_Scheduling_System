@@ -19,7 +19,6 @@ This project is a **Mail Scheduling Feature** built using **Next.js**. The appli
 
 ## Backend:
 - The backend logic for email scheduling and sending is handled by a separate server.
-- You can find the backend code in my [backend repository](https://github.com/TTHPATEL/Backend-mail-schedule) 🔧.
 - The backend manages the scheduling process and ensures emails are sent to the selected group of users with the chosen template at the specified time 📧.
 - **Nodemailer**: Used in the backend to send scheduled emails to recipients using selected templates 📧.
 - **Moment**: Helps with handling timestamps and time zones, ensuring that emails are sent at the right time based on the user's schedule 🕒.
